@@ -8,11 +8,12 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        return response()->json(Author::all());
+        return response()->json(Author::all(), 200);
     }
 
     public function store(Request $request)
     {
+        $request->validate(['name' => 'required']);
         $author = Author::create($request->all());
         return response()->json($author, 201);
     }
