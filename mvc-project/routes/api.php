@@ -1,10 +1,10 @@
 <?php
 // routes/api.php
 
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\API\GenreController;
+use App\Http\Controllers\API\AuthorController;
 
-Route::apiResource('books', BookController::class);
+Route::apiResource('genres', GenreController::class);
 Route::apiResource('authors', AuthorController::class);
 
 Route::get('/genres', [GenreController::class, 'index']);
